@@ -1,6 +1,6 @@
 ﻿namespace PatternsExamples.Behavioral.Mediator
 {
-	public class OrderControl : Colleague
+	public class OrderControl : ColleagueControl
 	{
 		public OrderControl(Mediator mediator) : base(mediator, "Order Button")
 		{

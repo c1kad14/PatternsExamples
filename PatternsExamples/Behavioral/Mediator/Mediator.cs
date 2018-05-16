@@ -14,7 +14,7 @@
 
 		//uncomment this part with other commented part of code
 		//to be able to notify specified colleague
-		//public void ControlInvoked(string text, Colleague from)
+		//public void ControlInvoked(string text, ColleagueControl from)
 		//{
 		//	if (from is SearchControl)
 		//	{

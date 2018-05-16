@@ -1,6 +1,6 @@
 ﻿namespace PatternsExamples.Behavioral.Mediator
 {
-	public class ViewControl : Colleague
+	public class ViewControl : ColleagueControl
 	{
 		public ViewControl(Mediator mediator) : base(mediator, "View Button")
 		{
