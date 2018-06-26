@@ -5,4 +5,12 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Behavioral\ChainOfResponsibility\" />
+    <Folder Include="Behavioral\Command\" />
+    <Folder Include="Behavioral\Visitor\" />
+    <Folder Include="Behavioral\Strategy\" />
+    <Folder Include="Creational\" />
+  </ItemGroup>
+
 </Project>
