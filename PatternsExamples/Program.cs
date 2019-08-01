@@ -7,6 +7,7 @@ using PatternsExamples.Behavioral.Mediator;
 using PatternsExamples.Behavioral.Observer;
 using PatternsExamples.Behavioral.State;
 using PatternsExamples.Behavioral.Template;
+using PatternsExamples.Creational.Factory;
 using PatternsExamples.Structural.Adapter;
 using PatternsExamples.Structural.Bridge;
 
@@ -24,8 +25,8 @@ namespace PatternsExamples
 			//StateDemo();
 			//AdapterDemo();
 			//BridgeDemo();
-			TemplateDemo();
-
+			//TemplateDemo();
+			FactoryDemo();
 			Console.ReadLine();
 		}
 
@@ -36,7 +37,6 @@ namespace PatternsExamples
 		/// <summary>
 		/// Mediator pattern helps us to provide connect independent objects, to be aware in each others changes
 		/// </summary>
-
 		private static void MediatorDemo()
 		{
 			Console.WriteLine("Hello World! This is presentation for mediator pattern");
@@ -72,8 +72,6 @@ namespace PatternsExamples
 		/// Aggreegate root pattern gives us posibility to add only unique values to our collection
 		/// F.E. Only one address type can be present in persons address list
 		/// </summary>
-
-
 		private static void AggregateRootDemo()
 		{
 			var person = new Person
@@ -82,8 +80,9 @@ namespace PatternsExamples
 				Second = "Smith"
 			};
 
-			person.AddAddress(new Address() { City = "New York", Street = "52 Street", Type = AddressType.Home });
-			person.AddAddress(new Address() { City = "New York", Street = "60 Street", Type = AddressType.Home }); // this address wont be added
+			person.AddAddress(new Address() {City = "New York", Street = "52 Street", Type = AddressType.Home});
+			person.AddAddress(new Address()
+				{City = "New York", Street = "60 Street", Type = AddressType.Home}); // this address wont be added
 		}
 
 		#endregion
@@ -95,38 +94,37 @@ namespace PatternsExamples
 		/// In .NET IEnumartor interface declares all needable method's
 		/// To be possible our class to be used in foreach loop it's required to implement IEnumerable interface (see IteratorIEnumerableDemo)
 		/// </summary>
-
 		private static void IteratorDemo()
 		{
 			var customer = new Customer();
-			customer.AddOrder(new Order() { OrderId = "1", Item = "Phone" });
-			customer.AddOrder(new Order() { OrderId = "2", Item = "Watch" });
-			customer.AddOrder(new Order() { OrderId = "3", Item = "TV" });
-			customer.AddOrder(new Order() { OrderId = "4", Item = "Radio" });
+			customer.AddOrder(new Order() {OrderId = "1", Item = "Phone"});
+			customer.AddOrder(new Order() {OrderId = "2", Item = "Watch"});
+			customer.AddOrder(new Order() {OrderId = "3", Item = "TV"});
+			customer.AddOrder(new Order() {OrderId = "4", Item = "Radio"});
 
 			while (customer.HasNext())
 			{
 				Console.WriteLine(customer.GetOrder().OrderId);
 			}
-
 		}
 
 
 		private static void IteratorIEnumerableDemo()
 		{
-			var orders = new OrdersList(new Order[] {
-			new Order
+			var orders = new OrdersList(new Order[]
 			{
-				Item = "Phone", OrderId = "1"
-			},
-			new Order
-			{
-				Item = "Watch", OrderId = "2"
-			},
-			new Order
-			{
-				Item = "TV", OrderId = "3"
-			},
+				new Order
+				{
+					Item = "Phone", OrderId = "1"
+				},
+				new Order
+				{
+					Item = "Watch", OrderId = "2"
+				},
+				new Order
+				{
+					Item = "TV", OrderId = "3"
+				},
 			});
 
 			foreach (var order in orders)
@@ -149,8 +147,8 @@ namespace PatternsExamples
 			var notifier = new SportResultNotifier();
 			var observer = new Observer() {Name = "John"};
 			notifier.Observers.Add(observer);
-			notifier.Observers.Add(new Observer(){Name = "Tony"});
-			notifier.Observers.Add(new Observer(){Name = "Samantha"});
+			notifier.Observers.Add(new Observer() {Name = "Tony"});
+			notifier.Observers.Add(new Observer() {Name = "Samantha"});
 			notifier.ResultChanged("Jamaica wins Brasil");
 			notifier.ResultChanged("Argentina looses Croatia");
 			notifier.Observers.Remove(observer);
@@ -160,6 +158,7 @@ namespace PatternsExamples
 		#endregion
 
 		#region State
+
 		/// <summary>
 		/// State pattern helps to save state of an object and change the behavior related to the current state
 		/// Easy extensible when new States appear
@@ -210,7 +209,6 @@ namespace PatternsExamples
 			{
 				Console.WriteLine(product);
 			}
-
 		}
 
 		#endregion
@@ -225,7 +223,21 @@ namespace PatternsExamples
 			player.Play();
 			player.CanSing = new RockMusic();
 			player.Play();
+		}
 
+		#endregion
+
+		#endregion
+
+		#region Creational
+
+		#region Factory
+
+		private static void FactoryDemo()
+		{
+			var factory = new ModelFactory();
+			Console.WriteLine(factory.GetModel<ModelA>().GetModelName());
+			Console.WriteLine(factory.GetModel<ModelB>().GetModelName());
 		}
 
 		#endregion
