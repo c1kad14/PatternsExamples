@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PatternsExamples.Creational.Factory
+﻿namespace PatternsExamples.Creational.Factory
 {
 	public class ModelA : IModel
 	{

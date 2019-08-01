@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PatternsExamples.Behavioral.State
+﻿namespace PatternsExamples.Behavioral.State
 {
     public abstract class Direction
     {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PatternsExamples.Behavioral.Template
+﻿namespace PatternsExamples.Behavioral.Template
 {
     class PoliticsDataExporter : DataExporter
     {

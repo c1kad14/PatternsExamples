@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PatternsExamples.Behavioral.AggregateRoot
+﻿namespace PatternsExamples.Behavioral.AggregateRoot
 {
     public class Address
     {

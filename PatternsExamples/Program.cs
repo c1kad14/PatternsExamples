@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Reflection.Metadata;
 using PatternsExamples.Behavioral.AggregateRoot;
 using PatternsExamples.Behavioral.Iterator;
 using PatternsExamples.Behavioral.Mediator;

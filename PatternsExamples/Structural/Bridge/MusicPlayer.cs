@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PatternsExamples.Structural.Bridge
+﻿namespace PatternsExamples.Structural.Bridge
 {
 	class MusicPlayer
 	{

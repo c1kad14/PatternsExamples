@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PatternsExamples.Behavioral.Iterator
+﻿namespace PatternsExamples.Behavioral.Iterator
 {
     public class Order
     {

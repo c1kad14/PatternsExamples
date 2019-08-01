@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace PatternsExamples.Creational.Factory
 {
@@ -19,7 +18,7 @@ namespace PatternsExamples.Creational.Factory
 
 		public TModel GetModel<TModel>() where TModel : IModel
 		{
-			return (TModel)_dict[typeof(TModel)];
+			return (TModel) _dict[typeof(TModel)];
 		}
 	}
 }
