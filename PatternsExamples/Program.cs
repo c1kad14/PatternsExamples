@@ -6,6 +6,7 @@ using PatternsExamples.Behavioral.Observer;
 using PatternsExamples.Behavioral.State;
 using PatternsExamples.Behavioral.Template;
 using PatternsExamples.Creational.Factory;
+using PatternsExamples.Creational.Singleton;
 using PatternsExamples.Structural.Adapter;
 using PatternsExamples.Structural.Bridge;
 
@@ -24,7 +25,8 @@ namespace PatternsExamples
 			//AdapterDemo();
 			//BridgeDemo();
 			//TemplateDemo();
-			FactoryDemo();
+			// FactoryDemo();
+			SingletonDemo();
 			Console.ReadLine();
 		}
 
@@ -240,6 +242,17 @@ namespace PatternsExamples
 
 		#endregion
 
+		#region Singleton
+
+		private static void SingletonDemo()
+		{
+			Console.WriteLine($"SessionId: {Session.Instance.SessionId}");
+			var session = Session.Instance;
+			Console.WriteLine($"SessionId: {session.SessionId}");
+		}
+
+		#endregion
+
 		#endregion
 	}
-}
+}	
